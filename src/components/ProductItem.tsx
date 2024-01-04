@@ -14,9 +14,6 @@ export interface ProductItemProps {
   description: string;
   qty: number
   brand: string
-  reduce: () => {
-    return 
-  }
 }
 
 const ProductItem: React.FC<ProductItemProps> = ( product ) => {

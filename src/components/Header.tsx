@@ -3,11 +3,7 @@ import Link from 'next/link';
 import React from 'react';
 import { useSelector } from 'react-redux';
 
-interface HeaderProps {
-  /* your props definition here */
-}
-
-const Header: React.FC<HeaderProps> = (props) => {
+const Header: React.FC = () => {
   const {loading, cartItems} = useSelector((state:CartState) => state)
   return (
     <header>
@@ -17,7 +13,7 @@ const Header: React.FC<HeaderProps> = (props) => {
             </Link>
             <div>
                 <span className='cart-badge'>
-                  {loading ? '' : cartItems.reduce((a,c) => a + c.qty, 0)}
+                  {loading ? '' : (cartItems ? cartItems.reduce((a,c) => a + c.qty, 0) : 0)}
                 </span>
                 <Link href='/cart'>Cart</Link>
             </div>
