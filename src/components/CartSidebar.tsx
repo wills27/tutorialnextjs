@@ -3,10 +3,11 @@ import { ProductItemProps } from './ProductItem';
 import { useDispatch, useSelector } from 'react-redux';
 import Link from 'next/link';
 import { addToCart, removeFromCart } from '@/redux/slices/cartSlice';
+import { RootState } from '@/redux/store';
 
 
 const CartSidebar: React.FC = () => {
-  const {loading, cartItems, itemsPrice} = useSelector((state) => state.cart)
+  const {loading, cartItems, itemsPrice} = useSelector((state:RootState) => state.cart)
 
   const dispatch = useDispatch()
 

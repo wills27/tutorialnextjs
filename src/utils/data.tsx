@@ -16,6 +16,7 @@ const data: Data = {
       numReviews: 10,
       description: 'High-quality shirt',
       brand: 'Brand A', // Add the brand property
+      qty: 0
     },
     {
       id: '2',
@@ -27,6 +28,7 @@ const data: Data = {
       numReviews: 10,
       description: 'High-quality shirt',
       brand: 'Brand B', // Add the brand property
+      qty: 0
     },
     {
       id: '3',
@@ -38,6 +40,7 @@ const data: Data = {
       numReviews: 14,
       description: 'High-quality shirt',
       brand: 'Brand C', // Add the brand property
+      qty: 0
     },
     {
       id: '4',
@@ -49,6 +52,7 @@ const data: Data = {
       numReviews: 10,
       description: 'High-quality shirt',
       brand: 'Brand D', // Add the brand property
+      qty: 0
     },
   ],
 };

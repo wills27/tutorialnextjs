@@ -4,6 +4,7 @@ import { ProductItemProps } from './ProductItem';
 import { useDispatch, useSelector } from 'react-redux';
 import { useRouter } from 'next/navigation';
 import { addToCart } from '@/redux/slices/cartSlice';
+import { RootState } from '@/redux/store';
 
 interface AddToCartProps {
   product: ProductItemProps,
@@ -14,7 +15,7 @@ interface AddToCartProps {
 
 const AddToCart: React.FC<AddToCartProps> = (props) => {
     const dispatch = useDispatch();
-    const {cartItems} = useSelector((state) => state.cart);
+    const {cartItems} = useSelector((state:RootState) => state.cart);
     const router = useRouter();
     const [qty, setQty] = useState(1)
 
