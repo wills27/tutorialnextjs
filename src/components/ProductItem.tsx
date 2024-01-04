@@ -5,14 +5,14 @@ import ProductRate from './ProductRate';
 import AddToCart from './AddToCart';
 
 export interface ProductItemProps {
-  id: string;
-  name: string;
-  image: string;
-  price: number;
-  countInStock: number;
-  rating: number;
-  numReviews: number;
-  description: string;
+  id: string
+  name: string
+  image: string
+  price: number
+  countInStock: number
+  rating: number
+  numReviews: number
+  description: string
   qty: number
   brand: string
 }
@@ -33,13 +33,21 @@ const ProductItem: React.FC<ProductItemProps> = ( product ) => {
         <Link href={`/product/${product.id}`}>
           <h2 className='text-lg'>{product.name}</h2>
         </Link>
-        <ProductRate rate={product.rating} count={product.numReviews}/>
+        <ProductRate 
+          rate={product.rating} 
+          count={product.numReviews}
+        />
         <p className='mb-2'>{product.brand}</p>
         <p>{product.price}</p>
-        <AddToCart showQty={false} product={product} increasePerClick={true} redirect={false} />
+        <AddToCart 
+          showQty={false} 
+          product={product} 
+          increasePerClick={true} 
+          redirect={false} 
+        />
       </div>
     </div>
-  );
-};
+  )
+}
 
 export default ProductItem;

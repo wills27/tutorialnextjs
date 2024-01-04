@@ -1,7 +1,7 @@
 import { ProductItemProps } from "@/components/ProductItem";
 
 export interface Data {
-  products: ProductItemProps[];
+  products: ProductItemProps[]
 }
 
 const data: Data = {
@@ -55,6 +55,6 @@ const data: Data = {
       qty: 0
     },
   ],
-};
+}
 
-export default data;
+export default data

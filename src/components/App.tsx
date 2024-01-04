@@ -1,13 +1,13 @@
 'use client'
 
-import React, { PropsWithChildren, useEffect } from 'react';
-import Header from './Header';
-import CartSidebar from './CartSidebar';
-import { hideLoading } from '@/redux/slices/cartSlice';
-import { useDispatch } from 'react-redux';
+import React, { PropsWithChildren, useEffect } from 'react'
+import Header from './Header'
+import CartSidebar from './CartSidebar'
+import { hideLoading } from '@/redux/slices/cartSlice'
+import { useDispatch } from 'react-redux'
 
 const App: React.FC<PropsWithChildren> = ( { children } ) => {
-  const dispatch = useDispatch();
+  const dispatch = useDispatch()
   useEffect(() => {
     dispatch(hideLoading())
   }, [dispatch])
@@ -19,7 +19,7 @@ const App: React.FC<PropsWithChildren> = ( { children } ) => {
         </div>
         <CartSidebar/>
     </div>
-  );
-};
+  )
+}
 
-export default App;
+export default App

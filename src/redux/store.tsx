@@ -1,6 +1,6 @@
 import { configureStore } from "@reduxjs/toolkit";
 import cartSliceReducer from "./slices/cartSlice";
-import rootReducer from "./root_reducer"; // Import your root reducer here
+import rootReducer from "./root_reducer";
   
 const store = configureStore({
     reducer: {
@@ -9,6 +9,6 @@ const store = configureStore({
     devTools: process.env.NODE_ENV !== 'production',
 })
 
-export type RootState = ReturnType<typeof rootReducer>; // Infer RootState from rootReducer
+export type RootState = ReturnType<typeof rootReducer>
 
-export default store;
+export default store

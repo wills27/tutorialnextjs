@@ -29,8 +29,8 @@ const cartSlice = createSlice({
   initialState,
   reducers: {
     addToCart: (state, action: PayloadAction<ProductItemProps>) => {
-      const item = action.payload;
-      const existItem = state.cartItems.find((x) => x.id === item.id);
+      const item = action.payload
+      const existItem = state.cartItems.find((x) => x.id === item.id)
 
       if (existItem) {
         state.cartItems = state.cartItems.map((x) =>
@@ -71,11 +71,11 @@ const cartSlice = createSlice({
       Cookies.set('cart', JSON.stringify(state));
     },
     hideLoading: (state) => {
-      state.loading = false;
+      state.loading = false
     },
   },
-});
+})
 
-export const { addToCart, removeFromCart, hideLoading } = cartSlice.actions;
+export const { addToCart, removeFromCart, hideLoading } = cartSlice.actions
 
-export default cartSlice.reducer;
+export default cartSlice.reducer

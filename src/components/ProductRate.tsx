@@ -11,7 +11,12 @@ interface ProductRateProps {
 const ProductRate: React.FC<ProductRateProps> = ({rate, count}) => {
     return(
         <div className='flex'>
-            <Rating style={{maxWidth: 100}} value={rate} readOnly/> {count} {' '} reviews
+            <Rating 
+                style={{maxWidth: 100}} 
+                value={rate} 
+                readOnly
+            /> 
+            {count} {' '} reviews
         </div>
     );
 }
