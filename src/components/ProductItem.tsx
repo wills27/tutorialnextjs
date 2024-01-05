@@ -38,7 +38,7 @@ const ProductItem: React.FC<ProductItemProps> = ( product ) => {
           count={product.numReviews}
         />
         <p className='mb-2'>{product.brand}</p>
-        <p>{product.price}</p>
+        <p>{"$ " + product.price}</p>
         <AddToCart 
           showQty={false} 
           product={product} 

@@ -9,6 +9,8 @@ import { useDispatch } from 'react-redux'
 const App: React.FC<PropsWithChildren> = ( { children } ) => {
   const dispatch = useDispatch()
   useEffect(() => {
+    const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    document.body.classList.toggle('dark-mode', isDarkMode);
     dispatch(hideLoading())
   }, [dispatch])
   return (

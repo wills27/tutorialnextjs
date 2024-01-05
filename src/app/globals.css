@@ -3,27 +3,26 @@
 @tailwind utilities;
 
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+  --background-color: #fff;
+  --text-color: #000;
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  background-color: var(--background-color);
+  color: var(--text-color);
+  transition: background-color 0.3s, color 0.3s;
+}
+
+body.dark-mode {
+  --background-color: rgb(19, 16, 34);
+  --text-color: #fff;
+}
+
+input, 
+select, 
+textarea {
+  @apply rounded border p-2 outline-none ring-indigo-300 focus:ring
+  dark:text-white dark:bg-gray-800;
 }
 
 .card {
@@ -35,7 +34,7 @@ body {
 }
 
 .primary-button {
-  @apply rounded bg-amber-300 text-black py-2 px-4 shadow outline-none hover:bg-amber-400 active:bg-amber-500
+  @apply rounded bg-amber-300 text-black py-2 px-4 shadow outline-none hover:bg-amber-400 active:bg-amber-500;
 }
 
 .default-button {

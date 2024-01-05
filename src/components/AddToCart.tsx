@@ -8,10 +8,14 @@ import { RootState } from '@/redux/store';
 
 const AddToCart: React.FC<{
     product: ProductItemProps,
-    showQty: boolean,
-    redirect: boolean,
-    increasePerClick: boolean,
-}> = (props) => {
+    showQty?: boolean,
+    redirect?: boolean,
+    increasePerClick?: boolean,
+}> = ( {product,
+        showQty = true,
+        redirect = true,
+        increasePerClick = false,
+} ) => {
     const dispatch = useDispatch()
     const {cartItems} = useSelector((state:RootState) => state.cart)
     const router = useRouter()
@@ -19,10 +23,10 @@ const AddToCart: React.FC<{
 
     const addToCartHandler = () => {
         let newQty = qty;
-        if (props.increasePerClick) {
-            const existItem = cartItems.find((item:ProductItemProps) => item.id === props.product.id)
+        if (increasePerClick) {
+            const existItem = cartItems.find((item:ProductItemProps) => item.id === product.id)
             if (existItem) {
-                if (existItem.qty + 1 <= props.product.countInStock)
+                if (existItem.qty + 1 <= product.countInStock)
                 {
                     newQty = existItem.qty + 1
                 } else {
@@ -30,12 +34,12 @@ const AddToCart: React.FC<{
                 }
             }
         }
-        dispatch(addToCart({...props.product, qty: newQty}))
-        if (props.redirect) router.push('/cart')
+        dispatch(addToCart({...product, qty: newQty}))
+        if (redirect) router.push('/cart')
     }
     return (
         <>
-            { props.product.countInStock > 0 && props.showQty && (
+            { product.countInStock > 0 && showQty && (
                 <div className='mb-2 flex justify-between'>
                     <div>Qty</div>
                     <div>
@@ -44,7 +48,7 @@ const AddToCart: React.FC<{
                             onChange={(e) => setQty(Number(e.target.value))}
                         >
                             {
-                                Array.from({length: props.product.countInStock}, (_, x) => (
+                                Array.from({length: product.countInStock}, (_, x) => (
                                     <option key={x + 1} value={x + 1}>
                                         {x + 1}
                                     </option>
@@ -56,7 +60,7 @@ const AddToCart: React.FC<{
                 )
             }
             <div>
-                {props.product.countInStock > 0 ? (
+                {product.countInStock > 0 ? (
                     <button 
                         className='primary-button w-full' 
                         onClick={addToCartHandler}
