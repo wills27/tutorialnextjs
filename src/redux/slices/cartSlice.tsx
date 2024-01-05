@@ -8,6 +8,10 @@ export interface CartState {
   cartItems: ProductItemProps[],
   shippingAddress: ShippingFormData,
   paymentMethod: string,
+  itemsPrice: number,
+  shippingPrice: number,
+  taxPrice: number,
+  totalPrice: number,
 }
 
 const initialState = Cookies.get('cart') 
