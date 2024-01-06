@@ -1,36 +1,15 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap");
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-:root {
-  --background-color: #fff;
-  --text-color: #000;
-}
-
 body {
-  background-color: var(--background-color);
-  color: var(--text-color);
-  transition: background-color 0.3s, color 0.3s;
+  @apply leading-[normal] m-0;
 }
-
-body.dark-mode {
-  --background-color: rgb(19, 16, 34);
-  --text-color: #fff;
-}
-
-input, 
-select, 
-textarea {
-  @apply rounded border p-2 outline-none ring-indigo-300 focus:ring
-  dark:text-white dark:bg-gray-800;
-}
-
-.card {
-  @apply mb-5 block rounded-lg border border-gray-200 shadow-md;
-}
-
-.cart-badge {
-  @apply absolute font-bold text-orange-600 ml-8 mt-0 text-center w-4;
+*,
+::before,
+::after {
+  border-width: 0;
 }
 
 .primary-button {

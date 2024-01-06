@@ -1,21 +1,70 @@
-import type { Config } from 'tailwindcss'
-
-const config: Config = {
+/** @type {import('tailwindcss').Config} */
+module.exports = {
   content: [
-    './src/pages/**/*.{js,ts,jsx,tsx,mdx}',
-    './src/components/**/*.{js,ts,jsx,tsx,mdx}',
-    './src/app/**/*.{js,ts,jsx,tsx,mdx}',
-    './src/utils/**/*.{js,ts,jsx,tsx,mdx}',
+    "./pages/**/*.{js,ts,jsx,tsx}",
+    "./components/**/*.{js,ts,jsx,tsx}",
+    "./app/**/*.{js,ts,jsx,tsx}",
+    "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
     extend: {
-      backgroundImage: {
-        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-        'gradient-conic':
-          'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
+      colors: {
+        whitesmoke: {
+          "100": "#f5f8fa",
+          "200": "#f3f6f9",
+          "300": "#f2f3f7",
+          "400": "#ececec",
+          "500": "#e8edf0",
+          "600": "#e5eaee",
+        },
+        "color-1": "#3c3b6e",
+        darkslategray: {
+          "100": "#464e5f",
+          "200": "#36454f",
+        },
+        "gray-palette-100": "#fff",
+        darkviolet: "#a020f0",
+        "color-6": "#212b36",
+        dimgray: "#595959",
+        "color-2": "#f64e60",
+        darkorange: "#ff7900",
+        crimson: "#e0115f",
+        "color-5": "#000207",
+        plum: "#e0b0ff",
+        olive: "#808000",
+        coral: "#ff7f50",
+        pink: "#ffc0cb",
+        teal: "#008080",
+        silver: "#c0c0c0",
+        peru: "#cd7f32",
+        ghostwhite: "#f4f3ff",
+        darkgray: "#aaa",
+        goldenrod: "#efaf00",
+        lightslategray: "#9897a6",
+        mistyrose: "#ffdadb",
+        "light-neutral-secondary": "#f0f1f2",
+        "light-text": "#9a9ea6",
+      },
+      spacing: {},
+      fontFamily: {
+        montserrat: "Montserrat",
+        poppins: "Poppins",
+      },
+      borderRadius: {
+        "8xs": "5px",
+        "11xl": "30px",
       },
     },
+    fontSize: {
+      sm: "14px",
+      base: "16px",
+      xl: "20px",
+      lg: "18px",
+      "3xs": "10px",
+      inherit: "inherit",
+    },
   },
-  plugins: [],
-}
-export default config
+  corePlugins: {
+    preflight: false,
+  },
+};
