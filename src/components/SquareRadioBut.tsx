@@ -1,6 +1,6 @@
-import React from 'react'
+import React, { PropsWithChildren } from 'react'
 
-const SquareRadioBut: React.FC = () => {
+const SquareRadioBut: React.FC<PropsWithChildren> = ({ children }) => {
     return (
         <div>
             <label className='cursor-pointer'>
@@ -18,7 +18,7 @@ const SquareRadioBut: React.FC = () => {
                         >
                         </svg>
                         <p className='text-sm font-semibold uppercase'>
-                            Color
+                            { children }
                         </p>
                     </div>
                 </div>

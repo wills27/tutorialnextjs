@@ -1,19 +1,18 @@
 import React from 'react'
 
-interface CustomButtonProps {
-  /* your props definition here */
-}
+import styles from '../../styles/Button.module.css'
 
-const CustomButton: React.FC<CustomButtonProps> = (props) => {
-    return (
-        <div>
-           <button 
-                className='rounded bg-amber-300 text-black py-2 px-4 shadow outline-none hover:bg-amber-400 active:bg-amber-500'
-                >
-                    Next Step
-                </button>
-        </div>
-     )
-}
+const CustomButton: React.FC<React.PropsWithChildren<{
+  className?: string
+  ariaLabel?: string
+}>> = props => (
+  <button
+    type="button"
+    className={`flex items-center justify-center font-bold text-black border-0 px-4 cursor-pointer ${styles.button} ${props.className || ''}`}
+    aria-label={props.ariaLabel}
+  >
+    {props.children}
+  </button>
+)
 
-export default CustomButton;
+export default CustomButton

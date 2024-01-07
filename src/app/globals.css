@@ -12,6 +12,12 @@ body {
   border-width: 0;
 }
 
+input::placeholder {
+  padding-left: 10px;
+  font-family: 'montserrat', sans-serif; /* Replace 'Your Custom Font' with the actual font name */
+  /* Add any other styles as needed */
+}
+
 .primary-button {
   @apply rounded bg-amber-300 text-black py-2 px-4 shadow outline-none hover:bg-amber-400 active:bg-amber-500;
 }

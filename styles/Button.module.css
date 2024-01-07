@@ -1,0 +1,36 @@
+.button {
+  border-radius: 5px;
+  height: 40px;
+  min-width: 100px; /* min-w-[100px] */
+  font-family: "montserrat";
+}
+
+.button:hover {
+  background-color: #d3d5da;
+}
+
+.button:active {
+  background-color: #eae7f0;
+}
+
+.btn {
+  outline: none;
+  cursor: pointer;
+  font-family: inherit;
+}
+
+.btnPrimary {
+  outline: none;
+  cursor: pointer;
+  font-family: inherit;
+  background-color: #ff7900;
+  color: white;
+}
+
+.btnPrimary:hover {
+  background-color: #dd6801;
+}
+
+.btnPrimary:active {
+  background-color: #ff7900;
+}

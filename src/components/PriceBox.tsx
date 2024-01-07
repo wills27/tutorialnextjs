@@ -24,9 +24,12 @@ const PriceBox: React.FC<{
                     </p>
                 </section>
             </div>
-            <div className=" bottom-[5px] font-medium text-yellow-500 text-center">
+            {freeSetup && (
+                <div className=" bottom-[5px] font-medium text-yellow-500 text-center">
                 Free Setup
-            </div>
+                </div>
+            )}
+            
         </div>
     );
 };
