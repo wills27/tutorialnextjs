@@ -44,7 +44,7 @@ export default function Home() {
           <div className="p-10 w-[60%] ">
 
             <CustomizationStep title="1. Quantity & Price">
-              <Inputfield className="w-32 h-9 mx-3 bg-gray-100 rounded-md" type='number' placeholder='50 min' onChange={setQuantity}> EnterQuantity </Inputfield>
+              <Inputfield value={quantity} className="w-32 h-9 mx-3 bg-gray-100 rounded-md" type='number' placeholder='50 min' onChange={setQuantity}> EnterQuantity </Inputfield>
               <PriceInformationArea />
             </CustomizationStep>
 
@@ -104,7 +104,7 @@ export default function Home() {
 
             <CustomizationStep title="5. Special Instuction">
               <p className="text-[12px] font-medium text-color-6 text-left">Special Instructions - Optional</p>
-              <Inputfield className="w-full h-28 bg-gray-100 rounded-md" placeholder={'Tell us anything to help your artist to deliver your eperoof to your liking.'} onChange={setSpecialInstuction} ></Inputfield>
+              <Inputfield value={specialInstuction} className="w-full h-28 bg-gray-100 rounded-md" placeholder={'Tell us anything to help your artist to deliver your eperoof to your liking.'} onChange={setSpecialInstuction} ></Inputfield>
             </CustomizationStep>
 
             <div className='mt-10'>
