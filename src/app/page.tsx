@@ -22,15 +22,17 @@ import CustomFooter from "@/components/CustomFooter";
 const colors = ["purple", "silver", "pink", "olive", "charcoal", "bronze", "teal", "coral", "mauve", "ruby"]
 
 export default function Home() {
-  
+
   const [nextPage, setNextPage] = useState<boolean>(false)
   const [decorationMethod, setDecorationMethod] = useState<string>("")
   const [decorationSetup, setDecorationSetup] = useState<string>("")
-  const [quantity, setQuantity] = useState<number>()
+  const [quantity, setQuantity] = useState<string>()
   const [price, setPrice] = useState<number>()
   const [color, setColor] = useState<string>("")
+  const [artWork, setArtWork] = useState<string>("")
+  const [specialInstuction, setSpecialInstuction] = useState<string>("")
 
-  function changeState(active:boolean) {
+  function changeState(active: boolean) {
     setNextPage(active)
   }
 
@@ -42,7 +44,7 @@ export default function Home() {
           <div className="p-10 w-[60%] ">
 
             <CustomizationStep title="1. Quantity & Price">
-              <Inputfield />
+              <Inputfield className="w-32 h-9 mx-3 bg-gray-100 rounded-md" type='number' placeholder='50 min' onChange={setQuantity}> EnterQuantity </Inputfield>
               <PriceInformationArea />
             </CustomizationStep>
 
@@ -102,10 +104,7 @@ export default function Home() {
 
             <CustomizationStep title="5. Special Instuction">
               <p className="text-[12px] font-medium text-color-6 text-left">Special Instructions - Optional</p>
-              <input className="w-full h-28 bg-gray-100 rounded-md"
-                type='text'
-                placeholder='Tell us anything to help your artist to deliver your eperoof to your liking.'
-              />
+              <Inputfield className="w-full h-28 bg-gray-100 rounded-md" placeholder={'Tell us anything to help your artist to deliver your eperoof to your liking.'} onChange={setSpecialInstuction} ></Inputfield>
             </CustomizationStep>
 
             <div className='mt-10'>
@@ -144,6 +143,12 @@ export default function Home() {
                 <InfoLabel label="Quantity" value={`${quantity}`} ></InfoLabel>
                 <InfoLabel label="Price" value={`${price}`} ></InfoLabel>
                 <InfoLabel label="Color" value={color} ></InfoLabel>
+                {nextPage ? (
+                  <>
+                    <InfoLabel label="Artwork" value={artWork} ></InfoLabel>
+                    <InfoLabel label="Special Instuction" value={specialInstuction} ></InfoLabel>
+                  </>
+                ) : (<></>)}
               </div>
 
             </div>

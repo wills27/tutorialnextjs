@@ -1,12 +1,13 @@
-import React from 'react'
+import React, { PropsWithChildren } from 'react'
 
-const Inputfield: React.FC = () => {
+const Inputfield: React.FC<PropsWithChildren<{className?:string, type?:string, placeholder?:string, onChange: (value:string) => void}>> = ( {className, type, placeholder, onChange, children} ) => {
     return (
         <div>
-            <p className="inline text-black text-base font-medium font-['Montserrat']">Enter Quantity :</p>
-            <input className="w-32 h-9 mx-3 bg-gray-100 rounded-md"
-                type='text'
-                placeholder='50 Min'
+            <p className="inline text-black text-base font-medium font-['Montserrat']"> {children} </p>
+            <input className={className}
+                type={type}
+                placeholder={placeholder}
+                onChange={(e) => onChange(e.target.value)}
             />
         </div>
     )
