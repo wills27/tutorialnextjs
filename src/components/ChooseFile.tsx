@@ -8,7 +8,7 @@ const ChooseFile: React.FC = () => {
                 Option 1
             </p>
             <div className='rounded-[4.95px] bg-whitesmoke-300 w-full h-14 flex items-center'>
-                <CustomButton className=' text-[16px] font-medium font-montserrat bg-color-1  text-white text-left ml-2'>Choose File</CustomButton>
+                <CustomButton className='  bg-color-1  text-white text-left ml-2'>Choose File</CustomButton>
             </div>
         </div>
     )

@@ -11,7 +11,7 @@ const PriceBox: React.FC<{
 }) => {
     return (
         <div className="text-center w-auto">
-            <div className=" rounded-md bg-ghostwhite flex flex-col justify-center py-2 px-4">
+            <div className=" rounded-md bg-whitesmoke-200 flex flex-col justify-center py-2 px-4">
                 <p className="text-[14px] font-medium font-montserrat text-color-5 opacity-[0.6] my-0">
                     {quantityRange}
                 </p>

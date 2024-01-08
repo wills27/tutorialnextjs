@@ -3,6 +3,7 @@
   height: 40px;
   min-width: 100px; /* min-w-[100px] */
   font-family: "montserrat";
+  font-size: 16px;
 }
 
 .button:hover {
