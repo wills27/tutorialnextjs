@@ -30,8 +30,8 @@ export default function Home() {
   const [price, setPrice] = useState<number>()
   const [color, setColor] = useState<string>("")
 
-  function changeState() {
-    setNextPage(true)
+  function changeState(active:boolean) {
+    setNextPage(active)
   }
 
   return (
@@ -47,8 +47,8 @@ export default function Home() {
             </CustomizationStep>
 
             <CustomizationStep title='2. Select Imprint Method'>
-              <RectangleRadioBut icon={laser_svg}>Laser Engraving</RectangleRadioBut>
-              <RectangleRadioBut icon={color_svg}>1 Color, 1 Location Imprint</RectangleRadioBut>
+              <RectangleRadioBut icon={laser_svg} onChange={() => setDecorationMethod("Laser Engraving")}>Laser Engraving</RectangleRadioBut>
+              <RectangleRadioBut icon={color_svg} onChange={() => setDecorationMethod("1 Color, 1 Location Imprint")}>1 Color, 1 Location Imprint</RectangleRadioBut>
             </CustomizationStep>
 
             <CustomizationStep title="3. Select Color">
@@ -57,7 +57,7 @@ export default function Home() {
 
                   colors.map((color, index) => (
                     <div key={index}>
-                      <SquareRadioBut>{color}</SquareRadioBut>
+                      <SquareRadioBut onChange={() => setColor(color)}>{color}</SquareRadioBut>
                     </div>
                   ))}
               </div>
@@ -67,7 +67,7 @@ export default function Home() {
               <CustomFooter />
               <div className='flex flex-row gap-2 justify-center'>
                 <CustomButton>Back to Product</CustomButton>
-                <CustomButton primary={true} onClick={changeState}>Next Step</CustomButton>
+                <CustomButton primary={true} onClick={() => setNextPage(true)}>Next Step</CustomButton>
               </div>
             </div>
 
@@ -112,7 +112,8 @@ export default function Home() {
               <CustomFooter />
               <div className='flex flex-row gap-2 justify-center'>
                 <CustomButton>Back to Product</CustomButton>
-                <CustomButton primary={true}>Next Step</CustomButton>
+                <CustomButton onClick={() => setNextPage(false)}>Previous Step</CustomButton>
+                <CustomButton primary={true}>Add Cart</CustomButton>
               </div>
             </div>
           </div>

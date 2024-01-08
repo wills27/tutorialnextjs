@@ -1,13 +1,14 @@
-import React, { PropsWithChildren } from 'react'
+import React, { PropsWithChildren, MouseEvent } from 'react'
 import Image from 'next/image';
 
-const RectangleRadioBut: React.FC<PropsWithChildren<{icon:any }>> = ({ children, icon }) => {
+const RectangleRadioBut: React.FC<PropsWithChildren<{icon:any, onChange?: () => void}>> = ({ children, icon , onChange}) => {
     return (
         <label className=' cursor-pointer'>
             <input
                 type='radio'
                 className='peer sr-only'
                 name='pricing'
+                onChange={onChange}
             />
             <div className=' w-auto h-auto h-max-[100px] mb-4 bg-whitesmoke-200 text-gray-600 rounded-md hover:shadow ring-2 ring-transparent peer-checked:text-color-1 peer-checked:bg-ghostwhite peer-checked:ring-offset-2'>
                 <div className='flex flex-col gap-1'>
